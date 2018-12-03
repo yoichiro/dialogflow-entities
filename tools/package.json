@@ -1,0 +1,17 @@
+{
+  "name": "entity-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yoichiro Tanaka",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.14.3"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
