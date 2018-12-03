@@ -75,10 +75,16 @@
                             <br>
                             <p>同名の市区町村が複数の都道府県に存在する場合は、Value は複数の項目がカンマ区切りで記載されます。</p>
                             <pre><code>{
+  "value": "東京都.府中市,広島県.府中市,広島市.府中町",
+  "synonyms": ["府中"]
+}, {
   "value": "東京都.府中市,広島県.府中市",
-  "synonyms": ["府中市","府中"]
+  "synonyms": ["府中市"]
+},{
+  "value": "広島市.府中町",
+  "synonyms": ["府中町"]
 }</code></pre>
-                            <p>この場合、「東京都と広島県のどちらの府中市でしょうか？」といった問いかけをユーザに行うと良いでしょう。</p>
+                            <p>この場合、「東京都と広島県のどちらの府中市でしょうか？」といったような問いかけをユーザに行うと良いでしょう。</p>
                             <br>
                             <p>このエンティティは、 <a href="https://opendata.resas-portal.go.jp/">RESAS (地域経済分析システム) API</a> を使って得られた情報を加工して作成されました。</p>
                             <p class="right-align grey-text lighten-1-text">Last updated: December 3, 2018</p>
