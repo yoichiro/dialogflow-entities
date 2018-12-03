@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-790299-27"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-790299-27');
+    </script>
+    -->
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        div.footer-copyright {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        pre {
+            padding: 0.5em;
+            background-color: #d3d3d3;
+            color : #000;
+        }
+        code {
+            font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav class="orange darken-3">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">Dialogflow Entities</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <p><a href="https://dialogflow.com/">Dialogflow</a> にて利用可能な <a href="https://dialogflow.com/docs/entities">エンティティ</a> のJSONファイルを掲載しています。ぜひあなたの Dialogflow エージェントにてお役立てください。</p>
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">都道府県.市区町村</span>
+                            <p>市区町村名を与えられると、所属する都道府県と市区町村の名前を得ることができるエンティティです。</p>
+                            <br>
+                            <img class="responsive-img" src="./images/prefecture-cities.png" />
+                            <pre><code>[
+  ...
+  {
+    "value": "埼玉県.蓮田市",
+    "synonyms": ["蓮田市","蓮田"]
+  },
+  {
+    "value": "埼玉県.坂戸市",
+    "synonyms": ["坂戸市","坂戸"]
+  },
+  ...
+]</code></pre>
+                            <p>このエンティティは、フルフィルメントにて処理されることを前提としています。例えば、Training Phraseにて "僕は ${city} で生まれました。" と登録して city をこのエンティティとした場合、ユーザが「僕は蓮田で生まれました」と発話すると、${city} として "埼玉県.蓮田市" が得られます。フルフィルメントコードにてピリオド(.)記号で文字列を分割することで、都道府県名と市区町村名を得ることが可能です。</p>
+                            <br>
+                            <p>同名の市区町村が複数の都道府県に存在する場合は、Value は複数の項目がカンマ区切りで記載されます。</p>
+                            <pre><code>{
+  "value": "東京都.府中市,広島県.府中市",
+  "synonyms": ["府中市","府中"]
+}</code></pre>
+                            <p>この場合、「東京都と広島県のどちらの府中市でしょうか？」といった問いかけをユーザに行うと良いでしょう。</p>
+                            <br>
+                            <p>このエンティティは、 <a href="https://opendata.resas-portal.go.jp/">RESAS (地域経済分析システム) API</a> を使って得られた情報を加工して作成されました。</p>
+                            <p class="right-align grey-text lighten-1-text">Last updated: December 3, 2018</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="./entities/prefecture-cities-20181203.json" download>download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer-copyright">&copy; Yoichiro Tanaka, all rights reserved.</div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
